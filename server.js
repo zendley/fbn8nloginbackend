@@ -160,6 +160,14 @@ app.get("/internal/user-token", async (req, res) => {
   res.json({ llUserToken: user.llUserToken });
 });
 
+
+
+app.get("/", (req, res) => {
+  res.send("Hello From Professional Chatbot Server!");
+});
+
+app.get("/favicon.ico", (req, res) => res.status(204).end());
+
 app.listen(PORT, () =>
   console.log(`API running on http://localhost:${PORT}`)
 );
