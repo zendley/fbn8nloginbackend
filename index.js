@@ -26,7 +26,7 @@ await mongoose.connect(MONGO_URI);
 // ---------- OAuth: send user to FB ----------
 
 app.get("/auth/login", (req, res) => {
-  const redirectUri = encodeURIComponent("https://fbloginbackend-us6u.vercel.app/auth/callback");
+  const redirectUri = encodeURIComponent("fbn8nloginbackend.vercel.app/auth/callback");
   const scope = encodeURIComponent(
     "public_profile,pages_manage_posts,pages_read_engagement,pages_show_list"
   );
@@ -37,7 +37,7 @@ app.get("/auth/login", (req, res) => {
 // ---------- OAuth: callback -> exchange tokens ----------
 app.get("/auth/callback", async (req, res) => {
   const { code } = req.query;
-  const redirectUri = "https://fbloginbackend-us6u.vercel.app/auth/callback";
+  const redirectUri = "fbn8nloginbackend.vercel.app/auth/callback";
 
   try {
     // 1) short-lived user token
