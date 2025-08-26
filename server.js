@@ -24,6 +24,7 @@ app.use(express.json());
 await mongoose.connect(MONGO_URI);
 
 // ---------- OAuth: send user to FB ----------
+
 app.get("/auth/login", (req, res) => {
   const redirectUri = encodeURIComponent("https://fbloginbackend-us6u.vercel.app/auth/callback");
   const scope = encodeURIComponent(
